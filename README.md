@@ -1,12 +1,12 @@
-<h1 align="center"> Teste Seu Reflexo</h1>
+<h1 align="center"> Reaction Time Test</h1>
 
 <p align="center">
 Esse projeto é um teste de reflxo.<br>
 Programa desenvolvido exclusivamente para praticar e aprimorar conhecimentos prévios em tecnologias web.<br>
-<a href="https://gabrielliima2.github.io/TesteSeuReflexo/" target="_blank">Teste Seu Reflexo</a>
+<a href="http://https://gabrielliima2.github.io/ReactionTimeTest/" target="_blank">ReactionTimeTest</a>
 </p>
 
-<img src="https://img.hotimg.com/ReactionTimeTestd8012d9748fa34e6.jpeg" alt="ReactionTimeTestd8012d9748fa34e6.jpeg" border="0" />
+<img src="https://img.hotimg.com/ReactionTimeTest196f9db974d33bd6.jpeg" alt="ReactionTimeTest196f9db974d33bd6.jpeg" border="0" />
 
 ## 🚀 Tecnologias
 
