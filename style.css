@@ -43,7 +43,7 @@ main {
 
     height: clamp(35rem, 60%, 70rem);
     width: clamp(30rem, 80%, 80rem);
-    margin: 1rem auto 4rem;
+    margin: 0 auto 4rem;
 
     border-radius: 6px;
     background: var(--bg-main);
