@@ -1,5 +1,5 @@
 const startGameButton = document.querySelector('.startGame')
-const instruction = document.querySelector('.instruction')
+const start = document.querySelector('.start')
 
 const home = document.querySelector('.home')
 const oneCircle = document.querySelector('.oneCircle')
@@ -31,6 +31,50 @@ const red = document.querySelector("#red")
 const purple = document.querySelector("#purple")
 
 
+const palette = document.querySelector('.palette')
+const bgColor = document.querySelector('.bgColor')
+const back = document.querySelector('.back')
+const github = document.querySelector('.github')
+
+
+const bgIntroduction = document.querySelector('.bgIntroduction')
+const introduction = document.querySelector('.introduction')
+
+bgIntroduction.addEventListener('click',()=>{
+    bgIntroduction.classList.add('hide')
+})
+
+introduction.addEventListener('click',()=>{
+    bgIntroduction.classList.add('hide')
+})
+
+
+
+let numToStopCountDown = 0;
+//------fazer voltar ao inico-------------------------------------
+
+back.addEventListener('click',()=>{
+    newGameFunction()
+    gameWithThreeCircles.classList.add('hide')
+    gameWithOneCircle.classList.add('hide')
+    start.classList.add('hide')
+    clickedInButtonRed.classList.add('hide')
+    buttonIsRed.classList.add('hide')
+    score.classList.add('hide')
+    startGameButton.classList.add('hide')
+    resetTimerScore()
+    resetTimer()
+    numToStopCountDown = 1
+    seconsToRestart = 2
+    startingTheGameAfterClickingOnTheGreen()
+})
+
+palette.addEventListener('click',()=>{
+    bgColor.classList.toggle('hide')
+})
+
+
+
 blue.addEventListener('click',()=>{
     document.documentElement.style.setProperty('--hue', '200')
 })
@@ -45,28 +89,26 @@ purple.addEventListener('click',()=>{
 })
 
 
-
-
 let mode = 0;
 
 oneCircle.addEventListener('click',()=>{
     home.classList.add('hide')
     startGameButton.classList.remove('hide')
-    instruction.classList.remove('hide')
+    start.classList.remove('hide')
     mode = 1;
 })
 
 threeCircle.addEventListener('click',()=>{
     home.classList.add('hide')
     startGameButton.classList.remove('hide')
-    instruction.classList.remove('hide')
+    start.classList.remove('hide')
     mode = 3
 })
 
 //-------------------------------inciando o jogo-------------------------------
 startGameButton.addEventListener('click', ()=>{
     startGameButton.classList.add('hide')
-    instruction.classList.add('hide')
+    start.classList.add('hide')
     if(mode == 1){
         gameWithOneCircle.classList.remove('hide')
     }else{
@@ -96,20 +138,28 @@ circleAlone.addEventListener('click',()=>{
         if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
-                startTimer()
-                resetTimerScore()
-                score.classList.add('hide')
-                gameWithOneCircle.classList.remove('hide')
+                if(numToStopCountDown == 1){
+                    return;
+                }else{
+                    startTimer()
+                    resetTimerScore()
+                    score.classList.add('hide')
+                    gameWithOneCircle.classList.remove('hide')
+                }
             }, 3000)
         }else{
             countDown()
             timerTimeOut = setTimeout(function(){
-                resetTimer()
-                resetTimerScore()
-                score.classList.add('hide')
-                averageScreen.classList.remove('hide')
-                average = average / 3
-                averageDisplay.innerText = `${Math.round(average)} ms`
+                if(numToStopCountDown == 1){
+                    return;
+                }else{
+                    resetTimer()
+                    resetTimerScore()
+                    score.classList.add('hide')
+                    averageScreen.classList.remove('hide')
+                    average = average / 3
+                    averageDisplay.innerText = `${Math.round(average)} ms`
+                }
             }, 3000)
         }
     }else{
@@ -133,20 +183,28 @@ firstCircle.addEventListener('click',()=>{
             if(vezes < 3){
                 countDown()
                 timerTimeOut = setTimeout(function(){
+                    if(numToStopCountDown == 1){
+                        return;
+                    }else{
                     startTimer()
                     resetTimerScore()
                     score.classList.add('hide')
                     gameWithThreeCircles.classList.remove('hide')
+                    }
                 }, 3000)
             }else{
                 countDown()
                 timerTimeOut = setTimeout(function(){
+                    if(numToStopCountDown == 1){
+                        return;
+                    }else{
                     resetTimer()
                     resetTimerScore()
                     score.classList.add('hide')
                     averageScreen.classList.remove('hide')
                     average = average / 3
                     averageDisplay.innerText = `${Math.round(average)} ms`
+                    }
                 }, 3000)
             }
         }else{
@@ -174,20 +232,28 @@ secondCircle.addEventListener('click',()=>{
         if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
-                startTimer()
-                resetTimerScore()
-                score.classList.add('hide')
-                gameWithThreeCircles.classList.remove('hide')
+                if(numToStopCountDown == 1){
+                    return;
+                }else{
+                    startTimer()
+                    resetTimerScore()
+                    score.classList.add('hide')
+                    gameWithThreeCircles.classList.remove('hide')
+                }
             }, 3000)
         }else{
             countDown()
             timerTimeOut = setTimeout(function(){
-                resetTimer()
-                resetTimerScore()
-                score.classList.add('hide')
-                averageScreen.classList.remove('hide')
-                average = average / 3
-                averageDisplay.innerText = `${Math.round(average)} ms`
+                if(numToStopCountDown == 1){
+                    return;
+                }else{
+                    resetTimer()
+                    resetTimerScore()
+                    score.classList.add('hide')
+                    averageScreen.classList.remove('hide')
+                    average = average / 3
+                    averageDisplay.innerText = `${Math.round(average)} ms`
+                }
             }, 3000)
         }
     }else{
@@ -215,20 +281,28 @@ thirdCircle.addEventListener('click',()=>{
         if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
-                startTimer()
-                resetTimerScore()
-                score.classList.add('hide')
-                gameWithThreeCircles.classList.remove('hide')
+                if(numToStopCountDown == 1){
+                    return;
+                }else{
+                    startTimer()
+                    resetTimerScore()
+                    score.classList.add('hide')
+                    gameWithThreeCircles.classList.remove('hide')
+                }
             }, 3000)
         }else{
             countDown()
             timerTimeOut = setTimeout(function(){
-                resetTimer()
-                resetTimerScore()
-                score.classList.add('hide')
-                averageScreen.classList.remove('hide')
-                average = average / 3
-                averageDisplay.innerText = `${Math.round(average)} ms`
+                if(numToStopCountDown == 1){
+                    return;
+                }else{
+                    resetTimer()
+                    resetTimerScore()
+                    score.classList.add('hide')
+                    averageScreen.classList.remove('hide')
+                    average = average / 3
+                    averageDisplay.innerText = `${Math.round(average)} ms`
+                }
             }, 3000)
         }
     }else{
@@ -250,15 +324,20 @@ let seconsToRestart = document.querySelector('.seconsToRestart')
 seconsToRestart = 2
 
 function countDown() {
+    numToStopCountDown = 0
         timerTimeOut = setTimeout(function(){
-            if(seconsToRestart == 0){
-                seconsToRestart = 2
-                startingTheGameAfterClickingOnTheGreen()
+            if(numToStopCountDown == 1){
                 return;
+            }else{
+                if(seconsToRestart == 0){
+                    seconsToRestart = 2
+                    startingTheGameAfterClickingOnTheGreen()
+                    return;
+                }
+                threeSecondsToStartOver.innerText = seconsToRestart
+                seconsToRestart--
+                countDown()
             }
-            threeSecondsToStartOver.innerText = seconsToRestart
-            seconsToRestart--
-            countDown()
         }, 1000)   
 }
      
@@ -385,9 +464,11 @@ function updateDisplayScore() {
 }
 
 const newGame = document.querySelector('.newGame')
-newGame.addEventListener('click', ()=>{
+newGame.addEventListener('click', newGameFunction)
+
+function newGameFunction(){
     averageScreen.classList.add('hide')
     home.classList.remove('hide')
     average = 0
     vezes = 0
-})
+}
