@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Teste o seu reflexo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Teste seu reflexo</h1>
+    </header>
+    <main>
+            <div class="home">
+                <h1>Quantidade de Círculos</h1>
+                <div class="mode">
+                    <div class="oneCircle">
+                        <div class="modeCircles">
+                            <div class="miniCircle"></div>
+                        </div>
+                        <p>Um</p>
+                    </div>
+
+                    <div class="threeCircle">
+                        <div class="modeCircles">
+                            <div class="miniCircle"></div>
+                            <div class="miniCircle"></div>
+                            <div class="miniCircle"></div>
+                        </div>
+                        <p>Três</p>
+                    </div>
+                </div>
+                <div class="bgColor">
+                    <div id="blue" class="color"></div>
+                    <div id="green" class="color"></div>
+                    <div id="red" class="color"></div>
+                    <div id="purple" class="color"></div>
+                </div>
+            </div>
+
+            <div class="gameWithThreeCircles hide">
+                <div id="firstCircle" class="circle"></div>
+                <div id="secondCircle" class="circle"></div>
+                <div id="thirdCircle" class="circle"></div>
+            </div>
+
+            <div class="gameWithOneCircle hide">
+                <div id="circleAlone" class="circle"></div>
+            </div>
+            
+            <div class="instruction hide">
+                <h2>Clique na tela para iníciar</h2>
+            </div>
+            
+            <div class="clickedInButtonRed hide">
+                <button class="RestartWhenClickedInButtonRed"></button>
+                <h1>Clique somente no círculo verde.</h1>
+                <h2>Clique na tela para retomar</h2>
+            </div>
+
+            <div class="buttonIsRed hide">
+                <button class="RestartRedOpition"></button>
+                <h1>Você clicou no momento errado, aguarde o círculo ficar verde.</h1>
+                <h2>Clique na tela para retomar</h2>
+            </div>
+
+            <div class="score hide">
+                <p>Pontuação</p>
+                <p id="cronometro">0</p>
+                <p id="threeSecondsToStartOver">3</p>
+            </div>
+
+            <div class="averageScreen hide">
+                <p>Média</p>
+                <p id="average"></p>
+                <h2>Clique na tela para volta ao início.</h2>
+                <button class="newGame"></button>
+            </div>
+
+            <button class="startGame hide"></button>
+        </main> 
+        <footer>
+            <div>
+                <a href="https://github.com/gabrielliima2" target="_blank">Criado por <span>gabrielliima2</span> </a>
+            </div>
+        </footer>
+</body>
+</html>
