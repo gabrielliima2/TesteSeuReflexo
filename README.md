@@ -6,7 +6,8 @@ Programa desenvolvido exclusivamente para praticar e aprimorar conhecimentos prÃ
 <a href="http://https://gabrielliima2.github.io/ReactionTimeTest/" target="_blank">ReactionTimeTest</a>
 </p>
 
-<img src="https://img.hotimg.com/ReactionTimeTest196f9db974d33bd6.jpeg" alt="ReactionTimeTest196f9db974d33bd6.jpeg" border="0" />
+
+<img src="https://i.postimg.cc/Fs8zMkbG/Teste-Sua-Reacao.jpg" alt="">
 
 ## ðŸš€ Tecnologias
 
