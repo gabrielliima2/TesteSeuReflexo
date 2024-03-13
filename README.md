@@ -3,7 +3,7 @@
 <p align="center">
 Esse projeto é um teste de reflxo.<br>
 Programa desenvolvido exclusivamente para praticar e aprimorar conhecimentos prévios em tecnologias web.<br>
-<a href="http://https://gabrielliima2.github.io/ReactionTimeTest/" target="_blank">Teste Seu Reflexo</a>
+<a href="https://gabrielliima2.github.io/TesteSeuReflexo/" target="_blank">Teste Seu Reflexo</a>
 </p>
 
 <img src="https://img.hotimg.com/ReactionTimeTestd8012d9748fa34e6.jpeg" alt="ReactionTimeTestd8012d9748fa34e6.jpeg" border="0" />
