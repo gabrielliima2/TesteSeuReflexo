@@ -43,7 +43,7 @@ main {
 
     height: clamp(35rem, 60%, 70rem);
     width: clamp(30rem, 80%, 80rem);
-    margin: 4rem auto ;
+    margin: 0 auto 3rem;
 
     border-radius: 6px;
     background: var(--bg-main);
@@ -264,6 +264,10 @@ footer a span:hover{
 
 
 @media (min-width: 700px){
+     main{
+        margin: 4rem auto;
+    }
+    
     .bgColor{
         width: 50%;
         justify-content: space-between;
