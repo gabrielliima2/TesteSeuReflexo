@@ -20,8 +20,7 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.6rem;
-    height: 100vh;
-    background: var(--bg-primary);
+    background: black;
     overflow-y: hidden;
     position: relative;
 }
@@ -44,8 +43,8 @@ header h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 100%;
-    width: 100%;
+    height: 95vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
 }
@@ -86,7 +85,7 @@ main {
     align-items: center;
     position: relative;
 
-    height: clamp(30rem, 60%, 70rem);
+    height: 29rem;
     width: clamp(31.5rem, 80%, 80rem);
     margin: 0 auto 2rem;
 
@@ -112,8 +111,6 @@ main h2{
 }
 
 .home{
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,7 +118,8 @@ main h2{
 }
 
 .home h1{
-    margin-top: 55px;
+    margin-top: 45px;
+    margin-bottom: 20px;
 }
 
 #iconCntainer{
@@ -135,6 +133,7 @@ main h2{
     border-radius: 6px;
     font-size: 25px;
 }
+
 #containerAllScore{
     display: flex;
 }
@@ -142,13 +141,13 @@ main h2{
 #containerShowScoreRankingOne{
     width: 50%;
 }
+
 #containerShowScoreRankingThree{
     width: 50%;
 }
 
 .rankingOne{
     width: 100%;
-    height: 100%;
     padding: 30px;
     font-size: 2rem;
     line-height: 30px;
@@ -163,16 +162,14 @@ main h2{
     font-size: 35px;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 10px;
 }
 
 .mode{
-    height: clamp(15rem, 17rem + 1vw, 20rem);
-    width: 90%;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: clamp(2rem, 2.5rem + 1vw, 5rem) 0;
+    justify-content: space-between;
+    margin-bottom: clamp(2rem, 2.5rem + 1vw, 5rem) ;
 }
 
 .miniCircle{
@@ -183,9 +180,6 @@ main h2{
     border-radius: 100%;
 }
 
-.TextMiniCircle{
-    display: flex;
-}
 .GreenMiniCircle{
     background-color: rgb(0, 255, 21);
     border: 4px solid rgb(23, 136, 29);
@@ -193,6 +187,7 @@ main h2{
     height: 3rem;
     border-radius: 100%;
 }
+
 .RedMiniCircle{
     background-color: red;
     border: 5px solid rgb(136, 23, 23);
@@ -233,13 +228,9 @@ main h2{
     box-shadow: 0px 0px 20px 2px var(--bg-primary)
 }
 
-.oneCircle{
-    margin: 0;
-}
 
 .threeCircle{
     margin-left: 5px;
-    padding: 5px;
 }
 
 .circle {
@@ -254,15 +245,12 @@ main h2{
 .gameWithThreeCircles{
     display: flex;
     gap: 0.5rem;
-    
 }
 
 .gameWithThreeCircles .circle{
     height: 10rem;
     width: 10rem;
-    
 }
-
 
 button {
     position: absolute;
@@ -282,7 +270,6 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30rem;
     gap: 2rem;
 }
 
@@ -301,7 +288,6 @@ button {
     margin-top: 3rem;
 }
 
-
 footer{
     display: flex;
     justify-content: center;
@@ -317,7 +303,7 @@ footer{
 ion-icon{
     font-size: clamp(40px, 50px + 1vw, 700px);
     color: var(--icon-color);
-    transition: 150ms;
+    transition: 100ms;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -354,9 +340,8 @@ ion-icon:hover{
     background-color: var(--bg-main);
     border-radius: 20px;
     animation-name: righttoleft;
-    animation-duration: 30ms;
+    animation-duration: 200ms;
 }
-
 
 .color{
     width: 5rem;
@@ -425,13 +410,11 @@ ion-icon:hover{
     header {
         height: 15rem;
     }
-
+    main{
+        height: 35rem;
+    }
     #rankIcon{
         font-size: 35px;
-    }
-    
-    .mode{
-        height: clamp;
     }
 
     .circle {
@@ -463,15 +446,15 @@ ion-icon:hover{
 
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1000px) and (min-height: 700px){
     .introduction{
-        height: clamp(45rem, 60%, 60rem);
+        height: clamp(50rem, 60%, 70rem);
         width: clamp(30rem, 80%, 90rem);
         line-height: 1.3em;
     }
 
     .introduction h2{
-        font-size: 2em;
+        font-size: 2rem;
         line-height: 1.3em;
     }
     .introduction p{
@@ -479,9 +462,6 @@ ion-icon:hover{
         line-height: 1.3em;
     }
 
-    main{
-        margin: 2rem auto 4rem;
-    }
 
     .gameWithThreeCircles{
         gap: 5rem;
