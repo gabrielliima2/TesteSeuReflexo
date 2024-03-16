@@ -13,20 +13,7 @@ const thirdCircle = document.querySelector('#thirdCircle')
 const circleAlone = document.querySelector('#circleAlone')
 const gameWithOneCircle = document.querySelector('.gameWithOneCircle')
 
-let randomTime = Math.round(Math.random()*(5000-1000+1))
-
-const score = document.querySelector('.score')
-const cronometro = document.querySelector('#cronometro')
-const threeSecondsToStartOver = document.querySelector('#threeSecondsToStartOver')
-const averageScreen = document.querySelector('.averageScreen')
-
-const clickedInButtonRed = document.querySelector('.clickedInButtonRed')
-const buttonIsRed = document.querySelector('.buttonIsRed')
-const RestartRedOpition = document.querySelector('.RestartRedOpition')
-const RestartWhenClickedInButtonRed = document.querySelector('.RestartWhenClickedInButtonRed')
-
-const blue = document.querySelector("#blue")
-const green = document.querySelector("#green")
+let rando
 const red = document.querySelector("#red")
 const purple = document.querySelector("#purple")
 
