@@ -40,6 +40,7 @@ const github = document.querySelector('.github')
 const bgIntroduction = document.querySelector('.bgIntroduction')
 const introduction = document.querySelector('.introduction')
 
+
 bgIntroduction.addEventListener('click',()=>{
     bgIntroduction.classList.add('hide')
 })
@@ -48,12 +49,32 @@ introduction.addEventListener('click',()=>{
     bgIntroduction.classList.add('hide')
 })
 
+const backRankingScreen = document.querySelector('.backRankingScreen')
+backRankingScreen.addEventListener('click',()=>{
+    rankingOne.classList.add('hide')
+    home.classList.remove('hide')
+})
+
+
+
+
+const showScoreRankingOne = document.querySelector('.showScoreRankingOne')
+const showScoreRankingThree = document.querySelector('.showScoreRankingThree')
+const rankingOne = document.querySelector('.rankingOne')
+const rankIcon = document.querySelector('#rankIcon')
+rankIcon.addEventListener('click',()=>{
+    rankingOne.classList.toggle('hide')
+    home.classList.add('hide')
+})
 
 
 let numToStopCountDown = 0;
 //------fazer voltar ao inico-------------------------------------
 
-back.addEventListener('click',()=>{
+
+back.addEventListener('click', backToBegining)
+
+function backToBegining(){
     newGameFunction()
     gameWithThreeCircles.classList.add('hide')
     gameWithOneCircle.classList.add('hide')
@@ -62,12 +83,13 @@ back.addEventListener('click',()=>{
     buttonIsRed.classList.add('hide')
     score.classList.add('hide')
     startGameButton.classList.add('hide')
+    rankingOne.classList.add('hide')
     resetTimerScore()
     resetTimer()
     numToStopCountDown = 1
     seconsToRestart = 2
     startingTheGameAfterClickingOnTheGreen()
-})
+}
 
 palette.addEventListener('click',()=>{
     bgColor.classList.toggle('hide')
@@ -121,10 +143,8 @@ startGameButton.addEventListener('click', ()=>{
 
 
 let randomCircle = Math.ceil(Math.random() * 3)
-
-let average = 0;
+let averageOne = '';
 let vezes = 0;
-
 const averageDisplay = document.querySelector('#average')
 
 circleAlone.addEventListener('click',()=>{
@@ -134,8 +154,9 @@ circleAlone.addEventListener('click',()=>{
         resetTimer()
         stopTimerScore()
         vezes ++
-        average += miliseconds
-        if(vezes < 3){
+        averageOne += miliseconds
+        //----------------------------------------------------------------mudar quantidade de vezes-----------------------------------**************************************
+        if(vezes < 1){
             countDown()
             timerTimeOut = setTimeout(function(){
                 if(numToStopCountDown == 1){
@@ -157,8 +178,10 @@ circleAlone.addEventListener('click',()=>{
                     resetTimerScore()
                     score.classList.add('hide')
                     averageScreen.classList.remove('hide')
-                    average = average / 3
-                    averageDisplay.innerText = `${Math.round(average)} ms`
+                    averageOne = averageOne / 3
+                    averageDisplay.innerText = `${Math.round(averageOne)} ms`
+                    saveAverageOne()
+                    //--------------------------------------------------------------------------------------------------------------------------------
                 }
             }, 3000)
         }
@@ -172,6 +195,7 @@ circleAlone.addEventListener('click',()=>{
 
 //-------------------------------quando clicar no círculo no jogo com três círculo-------------------------------
 
+let averageThree = 0
 firstCircle.addEventListener('click',()=>{
         if( firstCircle.style.backgroundColor == 'rgb(0, 255, 0)'){//se o círculo for verde
             gameWithThreeCircles.classList.add('hide')
@@ -179,7 +203,7 @@ firstCircle.addEventListener('click',()=>{
             resetTimer()
             stopTimerScore()
             vezes ++
-            average += miliseconds
+            averageThree += miliseconds
             if(vezes < 3){
                 countDown()
                 timerTimeOut = setTimeout(function(){
@@ -202,8 +226,9 @@ firstCircle.addEventListener('click',()=>{
                     resetTimerScore()
                     score.classList.add('hide')
                     averageScreen.classList.remove('hide')
-                    average = average / 3
-                    averageDisplay.innerText = `${Math.round(average)} ms`
+                    averageThree = averageThree / 3
+                    averageDisplay.innerText = `${Math.round(averageThree)} ms`
+                    saveAverageThree()
                     }
                 }, 3000)
             }
@@ -228,7 +253,7 @@ secondCircle.addEventListener('click',()=>{
         resetTimer()
         stopTimerScore()
         vezes ++
-        average += miliseconds
+        averageThree += miliseconds
         if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
@@ -251,8 +276,9 @@ secondCircle.addEventListener('click',()=>{
                     resetTimerScore()
                     score.classList.add('hide')
                     averageScreen.classList.remove('hide')
-                    average = average / 3
-                    averageDisplay.innerText = `${Math.round(average)} ms`
+                    averageThree = averageThree / 3
+                    averageDisplay.innerText = `${Math.round(averageThree)} ms`
+                    saveAverageThree()
                 }
             }, 3000)
         }
@@ -277,7 +303,7 @@ thirdCircle.addEventListener('click',()=>{
         resetTimer()
         stopTimerScore()
         vezes ++
-        average += miliseconds
+        averageThree += miliseconds
         if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
@@ -300,8 +326,9 @@ thirdCircle.addEventListener('click',()=>{
                     resetTimerScore()
                     score.classList.add('hide')
                     averageScreen.classList.remove('hide')
-                    average = average / 3
-                    averageDisplay.innerText = `${Math.round(average)} ms`
+                    averageThree = averageThree / 3
+                    averageDisplay.innerText = `${Math.round(averageThree)} ms`
+                    saveAverageThree()
                 }
             }, 3000)
         }
@@ -469,6 +496,142 @@ newGame.addEventListener('click', newGameFunction)
 function newGameFunction(){
     averageScreen.classList.add('hide')
     home.classList.remove('hide')
-    average = 0
+    averageOne = 0
+    averageThree = 0
     vezes = 0
 }
+
+
+showAverageOneRankingAtTheBegining()
+showAverageThreeRankingAtTheBegining()
+
+//mostra o ranking do jogo com um circulo---------------------------------
+function showAverageOneRankingAtTheBegining(){
+    if(localStorage.getItem('averageRanking') == null){
+        localStorage.getItem('averageRanking') == '[]'
+        showScoreRankingOne.innerHTML = 'Construa o seu ranking!'
+    }else{
+        let oldAverageLength = JSON.parse(localStorage.getItem('averageRanking'));
+        if(oldAverageLength.length<= 5){
+            for(let i = 0; i < oldAverageLength.length; i++){
+                showScoreRankingOne.innerHTML += `${i+1}º:  ${oldAverageLength[i]} <br>` 
+            }
+        }else{
+            for(let i = 0; i < 5; i++){
+                showScoreRankingOne.innerHTML += `${i+1}º:  ${oldAverageLength[i]} <br>` 
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+function saveAverageOne() {
+    //pega o valor que der no average
+    let newAverage = Math.round(averageOne)
+    
+    //se nao tiver nada salvo no localstorage, entao salva uma lista vazia
+    if(localStorage.getItem('averageRanking') == null){
+        localStorage.setItem('averageRanking', '[]')
+    }
+    
+    //pega o averageRanking antigo e o coloca com o novo
+    let oldAverage = JSON.parse(localStorage.getItem('averageRanking'))
+    if(localStorage.getItem('averageRanking') == '[]'){
+        oldAverage.push(newAverage)
+    }else{
+        let oldAverageLength = oldAverage.length;
+        let indice;
+        for(let i = 0; i <= oldAverageLength ; i++ ){
+            if(newAverage >= oldAverage[i]){
+                indice = i + 1
+            }
+        }
+        oldAverage.splice(indice,0,newAverage)
+    }
+    
+    //salva o antigo e o novo averageRanking 
+    let txt = ''
+    let oldAverageLength = oldAverage.length;
+    showScoreRankingOne.innerHTML += ` `
+    let index = 0;
+    if(oldAverageLength <= 5){
+        index = oldAverageLength
+    }else{
+        index = 5
+    }
+    for(let i = 0; i < index; i++){
+        txt += ` ${i+1}°: ${Math.round(oldAverage[i])} <br>`
+    }
+    
+    showScoreRankingOne.innerHTML = txt
+    localStorage.setItem('averageRanking', JSON.stringify(oldAverage))
+}
+
+
+//mostra o ranking do jogo com tres circulo---------------------------------
+
+function saveAverageThree() {
+    //pega o valor que der no average
+    let newAverage = Math.round(averageThree)
+    
+    //se nao tiver nada salvo no localstorage, entao salva uma lista vazia
+    if(localStorage.getItem('averageRankingThree') == null){
+        localStorage.setItem('averageRankingThree', '[]')
+    }
+    
+    //pega o averageRankingThree antigo e o coloca com o novo
+    let oldAverage = JSON.parse(localStorage.getItem('averageRankingThree'))
+    if(localStorage.getItem('averageRankingThree') == '[]'){
+        oldAverage.push(newAverage)
+    }else{
+        let oldAverageLength = oldAverage.length;
+        let indice;
+        for(let i = 0; i <= oldAverageLength ; i++ ){
+            if(newAverage >= oldAverage[i]){
+                indice = i + 1
+            }
+        }
+        oldAverage.splice(indice,0,newAverage)
+    }
+    
+    //salva o antigo e o novo averageRankingThree 
+    let txt = ''
+    let oldAverageLength = oldAverage.length;
+    showScoreRankingThree.innerHTML += ` `
+    let index = 0;
+    if(oldAverageLength <= 5){
+        index = oldAverageLength
+    }else{
+        index = 5
+    }
+    for(let i = 0; i < index; i++){
+        txt += ` ${i+1}°: ${Math.round(oldAverage[i])} <br>`
+    }
+    showScoreRankingThree.innerHTML = txt
+    localStorage.setItem('averageRankingThree', JSON.stringify(oldAverage))
+}
+
+function showAverageThreeRankingAtTheBegining(){
+    if(localStorage.getItem('averageRankingThree') == null){
+        localStorage.getItem('averageRankingThree') == '[]'
+        showScoreRankingThree.innerHTML = 'Construa o seu ranking!'
+    }else{
+        let oldAverageLength = JSON.parse(localStorage.getItem('averageRankingThree'));
+        showScoreRankingThree.innerHTML = ` `
+        if(oldAverageLength.length<= 5){
+            for(let i = 0; i < oldAverageLength.length; i++){
+                showScoreRankingThree.innerHTML += `${i+1}º:  ${oldAverageLength[i]} <br>` 
+            }
+        }else{
+            for(let i = 0; i < 5; i++){
+                showScoreRankingThree.innerHTML += `${i+1}º:  ${oldAverageLength[i]} <br>` 
+            }
+        }
+        
+    }
+}
+
