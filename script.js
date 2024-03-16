@@ -155,8 +155,8 @@ circleAlone.addEventListener('click',()=>{
         stopTimerScore()
         vezes ++
         averageOne += miliseconds
-        //----------------------------------------------------------------mudar quantidade de vezes-----------------------------------**************************************
-        if(vezes < 1){
+        //----------------------------------------------------------------mudar quantidade de vezes-----------------------------------
+        if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
                 if(numToStopCountDown == 1){
@@ -181,7 +181,6 @@ circleAlone.addEventListener('click',()=>{
                     averageOne = averageOne / 3
                     averageDisplay.innerText = `${Math.round(averageOne)} ms`
                     saveAverageOne()
-                    //--------------------------------------------------------------------------------------------------------------------------------
                 }
             }, 3000)
         }
