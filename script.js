@@ -39,13 +39,15 @@ const github = document.querySelector('.github')
 
 const bgIntroduction = document.querySelector('.bgIntroduction')
 const introduction = document.querySelector('.introduction')
-
+const body = document.body;
 
 bgIntroduction.addEventListener('click',()=>{
+    body.style.background = 'var(--bg-primary)'
     bgIntroduction.classList.add('hide')
 })
 
 introduction.addEventListener('click',()=>{
+    body.style.background = 'var(--bg-primary)'
     bgIntroduction.classList.add('hide')
 })
 
