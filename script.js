@@ -509,7 +509,7 @@ showAverageThreeRankingAtTheBegining()
 function showAverageOneRankingAtTheBegining(){
     if(localStorage.getItem('averageRanking') == null){
         localStorage.getItem('averageRanking') == '[]'
-        showScoreRankingOne.innerHTML = 'Construa o seu ranking!'
+        showScoreRankingOne.innerHTML = 'Não há jogadas!'
     }else{
         let oldAverageLength = JSON.parse(localStorage.getItem('averageRanking'));
         if(oldAverageLength.length<= 5){
@@ -618,7 +618,7 @@ function saveAverageThree() {
 function showAverageThreeRankingAtTheBegining(){
     if(localStorage.getItem('averageRankingThree') == null){
         localStorage.getItem('averageRankingThree') == '[]'
-        showScoreRankingThree.innerHTML = 'Construa o seu ranking!'
+        showScoreRankingThree.innerHTML = 'Não há jogadas!'
     }else{
         let oldAverageLength = JSON.parse(localStorage.getItem('averageRankingThree'));
         showScoreRankingThree.innerHTML = ` `
