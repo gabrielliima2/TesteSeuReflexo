@@ -143,7 +143,7 @@ startGameButton.addEventListener('click', ()=>{
 
 
 let randomCircle = Math.ceil(Math.random() * 3)
-let averageOne = '';
+let averageOne = 0;
 let vezes = 0;
 const averageDisplay = document.querySelector('#average')
 
@@ -155,7 +155,7 @@ circleAlone.addEventListener('click',()=>{
         stopTimerScore()
         vezes ++
         averageOne += miliseconds
-        //----------------------------------------------------------------mudar quantidade de vezes-----------------------------------
+        //----------------------------------------------------------------mudar quantidade de vezes----------------------------------
         if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
@@ -505,13 +505,16 @@ showAverageOneRankingAtTheBegining()
 showAverageThreeRankingAtTheBegining()
 
 //mostra o ranking do jogo com um circulo---------------------------------
+
+
 function showAverageOneRankingAtTheBegining(){
     if(localStorage.getItem('averageRanking') == null){
         localStorage.getItem('averageRanking') == '[]'
         showScoreRankingOne.innerHTML = 'Não há jogadas!'
     }else{
         let oldAverageLength = JSON.parse(localStorage.getItem('averageRanking'));
-        if(oldAverageLength.length<= 5){
+        showScoreRankingOne.innerHTML = ` `
+        if(oldAverageLength.length <= 5){
             for(let i = 0; i < oldAverageLength.length; i++){
                 showScoreRankingOne.innerHTML += `${i+1}º:  ${oldAverageLength[i]} <br>` 
             }
@@ -523,10 +526,6 @@ function showAverageOneRankingAtTheBegining(){
         
     }
 }
-
-
-
-
 
 function saveAverageOne() {
     //pega o valor que der no average
@@ -551,19 +550,21 @@ function saveAverageOne() {
         }
         oldAverage.splice(indice,0,newAverage)
     }
-    
     //salva o antigo e o novo averageRanking 
     let txt = ''
     let oldAverageLength = oldAverage.length;
-    showScoreRankingOne.innerHTML += ` `
+
+    showScoreRankingOne.innerHTML = ` `
     let index = 0;
     if(oldAverageLength <= 5){
-        index = oldAverageLength
+        index = oldAverageLength;
     }else{
         index = 5
     }
     for(let i = 0; i < index; i++){
+
         txt += ` ${i+1}°: ${Math.round(oldAverage[i])} <br>`
+
     }
     
     showScoreRankingOne.innerHTML = txt
@@ -600,7 +601,7 @@ function saveAverageThree() {
     //salva o antigo e o novo averageRankingThree 
     let txt = ''
     let oldAverageLength = oldAverage.length;
-    showScoreRankingThree.innerHTML += ` `
+    showScoreRankingThree.innerHTML = ''
     let index = 0;
     if(oldAverageLength <= 5){
         index = oldAverageLength
