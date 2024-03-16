@@ -8,6 +8,7 @@
 
     <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-webp">
     <script src="script.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
     </header>
     <div class="bgIntroduction">
         <div class="introduction">
-            <h2>Teste seu reflexo</h2>
+            <h2>Teste seus reflexos</h2>
             <p>
                 Você tem três tentativas para fazer o seu melhor tempo, clicando apenas quando o círculo estiver verde.<br>
 
@@ -23,7 +24,7 @@
             </p>
                 <div class="GreenMiniCircle"></div>
             <p>
-                Se clicar no vermelho, a rodada será reiniciada e você terá uma nova chance.<br>
+                Se clicar no vermelho, aquela rodada será reiniciada e você terá uma nova chance de clicar o mais rápido possível.<br>
             </p>
                 <div class="RedMiniCircle"></div>
             <p>
@@ -41,7 +42,26 @@
     </div>
 
         <main>
-            <div class="home">
+            <div class="rankingOne hide">
+                <ion-icon class="backRankingScreen" name="close-circle-outline"></ion-icon>
+                <h1>Seus melhores tempos</h1>
+                <div id="containerAllScore">
+                    <div id="containerShowScoreRankingOne">
+                        <h2>Um circulo</h2>
+                        <p class=" showScoreRankingOne"></p>
+                    </div>
+                    <div id="containerShowScoreRankingThree">
+                        <h2>Três circulos</h2>
+                        <p class=" showScoreRankingThree"></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="home ">
+                <div id="iconCntainer">
+                    <ion-icon id="rankIcon" name="stats-chart-outline"></ion-icon>
+                </div>
                 <h1>Quantidade de Círculos</h1>
                 <div class="mode">
                     <div class="oneCircle">
