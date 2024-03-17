@@ -81,7 +81,7 @@ body p{
 }
 
 header {
-    height: min(150px, 10vh);
+    height: min(150px, 7vh);
     width: min(500px, 90vw);
     text-align: center;
     display: flex;
@@ -103,7 +103,7 @@ main {
     justify-self: center;
     height: 50vh;
     width: min(800px, 90vw);
-    margin: 5.5vh auto 10vh;
+    margin: 0 auto 10vh;
 
     border-radius: 6px;
     background: var(--bg-main);
