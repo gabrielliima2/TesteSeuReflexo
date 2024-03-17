@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -337,38 +338,37 @@ ion-icon:hover{
     animation-duration: 200ms;
 }
 
-.color{
-    width: 3rem;
-    height:  3rem;
-    border-radius: 100%;
-}
 #blue{
-    background: rgb(0, 183, 255);
-    border: 5px solid rgb(0, 85, 119);
+    font-size: 5vh;
+    color:  rgb(0, 183, 255);
+    background:  rgb(0, 85, 119);
     cursor: pointer;
 }
 #blue:hover{
     box-shadow: 0px 0px 10px 1px rgba(0, 85, 119, 0.8);
 }
 #green{
-    background: rgb(0, 255, 0);
-    border: 5px solid rgb(2, 113, 2);
+    font-size: 5vh;
+    color: rgb(0, 255, 0);
+    background: rgb(2, 113, 2);
     cursor: pointer;
 }
 #green:hover{
     box-shadow: 0px 0px 10px 1px rgb(2, 113, 2, 0.8);
 }
 #red{
-    background: rgb(255, 76, 76);
-    border: 5px solid rgb(141, 46, 46);
+    font-size: 5vh;
+    color: rgb(255, 76, 76);
+    background: rgb(141, 46, 46);
     cursor: pointer;
 }
 #red:hover{
     box-shadow: 0px 0px 10px 1px rgb(141, 46, 46, 0.8);
 }
 #purple{
-    background: rgb(128, 0, 255);
-    border: 5px solid rgb(72, 1, 142);
+    font-size: 5vh;
+    color: rgb(128, 0, 255);
+    background: rgb(72, 1, 142);
     cursor: pointer;
 }
 #purple:hover{
