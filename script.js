@@ -157,7 +157,7 @@ circleAlone.addEventListener('click',()=>{
         stopTimerScore()
         vezes ++
         averageOne += miliseconds
-        //----------------------------------------------------------------mudar quantidade de vezes----------------------------------
+//----------------------------------------------------------------mudar quantidade de vezes----------------------------------
         if(vezes < 3){
             countDown()
             timerTimeOut = setTimeout(function(){
@@ -418,17 +418,17 @@ function startTimer() {
                 // O tempo aleatório foi atingido, o cronômetro para
                 if(mode == 1){
                     circleAlone.style.backgroundColor = 'rgb(0, 255, 0)'
-                    circleAlone.style.border = '1rem solid rgb(0, 82, 19, 0.5)'
+                    circleAlone.style.border = '5px solid rgb(0, 82, 19, 0.5)'
                 }else{
                     if(randomCircle == 1){
                         firstCircle.style.backgroundColor = 'rgb(0, 255, 0)'
-                        firstCircle.style.border = '1rem solid rgb(0, 82, 19, 0.5)'
+                        firstCircle.style.border = '5px solid rgb(0, 82, 19, 0.5)'
                     }else if(randomCircle == 2){
                         secondCircle.style.backgroundColor = 'rgb(0, 255, 0)'
-                        secondCircle.style.border = '1rem solid rgb(0, 82, 19, 0.5)'
+                        secondCircle.style.border = '5px solid rgb(0, 82, 19, 0.5)'
                     }else if(randomCircle == 3){
                         thirdCircle.style.backgroundColor = 'rgb(0, 255, 0)'
-                        thirdCircle.style.border = '1rem solid rgb(0, 82, 19, 0.5)'
+                        thirdCircle.style.border = '5px solid rgb(0, 82, 19, 0.5)'
                     }
                 }
                 startTimerScore()
@@ -450,15 +450,15 @@ function resetTimer() {
     currentTime = 0
     if(mode==1){
         circleAlone.style.backgroundColor = 'red'
-        circleAlone.style.border = '1rem solid rgb(191, 56, 56)'
+        circleAlone.style.border = '5px solid rgb(191, 56, 56)'
     }else{
         randomCircle = Math.ceil(Math.random() * 3)
         firstCircle.style.backgroundColor = 'red'
-        firstCircle.style.border = '1rem solid rgb(191, 56, 56)'
+        firstCircle.style.border = '5px solid rgb(191, 56, 56)'
         secondCircle.style.backgroundColor = 'red'
-        secondCircle.style.border = '1rem solid rgb(191, 56, 56)'
+        secondCircle.style.border = '5px solid rgb(191, 56, 56)'
         thirdCircle.style.backgroundColor = 'red'
-        thirdCircle.style.border = '1rem solid rgb(191, 56, 56)'
+        thirdCircle.style.border = '5px solid rgb(191, 56, 56)'
     }
 } 
     
