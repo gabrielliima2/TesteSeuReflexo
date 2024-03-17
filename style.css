@@ -99,7 +99,7 @@ main {
     align-items: center;
     position: relative;
 
-    height: 50vh;
+    height: 45vh;
     width: min(800px, 90vw);
     margin: 0 auto 2rem;
 
