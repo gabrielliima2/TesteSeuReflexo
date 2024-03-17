@@ -81,12 +81,13 @@ body p{
 }
 
 header {
-    height: min(150px, 7vh);
+    height: min(150px, 10vh);
     width: min(500px, 90vw);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    
    
 }
 
@@ -103,7 +104,7 @@ main {
     justify-self: center;
     height: 50vh;
     width: min(800px, 90vw);
-    margin: 5vh auto 10vh;
+    margin: 0 auto 12vh;
 
     border-radius: 6px;
     background: var(--bg-main);
@@ -432,6 +433,10 @@ ion-icon:hover{
     }
 }
 @media (min-width: 700px) and (min-height: 500px){
+    main{
+        height: 70vh;
+        
+    }
     .circle {
         height: 15rem;
         width: 15rem;
