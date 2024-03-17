@@ -5,7 +5,6 @@
 }
 
 :root {
-    font-size: 62.5%;
 
     --hue: 200;
     --bg-primary: hsl(var(--hue), 35%, 30%);
@@ -15,28 +14,24 @@
     --icon-color: hsl(var(--hue), 95%, 8%);
 
     --button-color: rgba(255, 255, 255, 0);
+
+    --ft-size: 3vh;
 }
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.6rem;
     background: black;
     overflow: hidden;
-    position: relative;
-}
-
-header {
-    height: 10rem;
+    font-size: var(--ft-size);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-header h1 {
-    color: var(--fc-primary);
-    font-size:  clamp(2rem, 2rem + 5vw, 15rem);
+body p{
+    color: rgba(0, 0, 0, 0.9);
 }
-
 .bgIntroduction{
     position: absolute;
     top: 0;
@@ -59,8 +54,8 @@ header h1 {
     text-align: center;
     border-radius: 6px;
 
-    height: clamp(45rem, 60%, 50rem);
-    width: clamp(30rem, 80%, 90rem);
+    height: 90vh;
+    width: min(80rem, 90vw);
 
     position: absolute;
     top: 0;
@@ -72,11 +67,31 @@ header h1 {
     animation: downtop 1000ms 200ms backwards;
 }
 
-.introduction h2{
-    font-size: 1.6em;
+.GreenMiniCircle{
+    background-color: rgb(0, 255, 21);
+    border: 4px solid rgb(23, 136, 29);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
 }
-.introduction p{
-    font-size: 1em;
+
+.RedMiniCircle{
+    background-color: red;
+    border: 5px solid rgb(136, 23, 23);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+}
+
+header {
+    height: min(150px, 15vh);
+    width: min(500px, 90vw);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 5vh ;
+    color: var(--fc-primary);
 }
 
 main {
@@ -85,8 +100,8 @@ main {
     align-items: center;
     position: relative;
 
-    height: 29rem;
-    width: clamp(31.5rem, 80%, 80rem);
+    height: 70vh;
+    width: min(800px, 90vw);
     margin: 0 auto 2rem;
 
     border-radius: 6px;
@@ -94,148 +109,118 @@ main {
     color: var(--fc-secondary-dark);
 
     text-align: center;
-    font-size: clamp(2rem, 3rem + 1vw, 5rem);
     line-height: clamp(2rem, 4rem + 1vw, 6rem);
 
     box-shadow: 0px 0px 50px 10px var(--fc-secondary-dark);
-    transition: 200ms;
+    /*transition: 100ms;*/
 }
 
-main h1{
-    font-size: clamp(2rem, 2rem + 1vw, 10rem);
-}
-
-main h2{
-    font-size: clamp(1.6rem, 1.6rem + 1vw, 3rem);
+main h3{
     color: var(--fc-secondary-dark);
-}
-
-.home{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.home h1{
-    margin-top: 45px;
-    margin-bottom: 20px;
-}
-
-#iconCntainer{
-    display: flex;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-#rankIcon{
-    border-radius: 6px;
-    font-size: 25px;
-}
-
-#containerAllScore{
-    display: flex;
-}
-
-#containerShowScoreRankingOne{
-    width: 50%;
-}
-
-#containerShowScoreRankingThree{
-    width: 50%;
 }
 
 .rankingOne{
     width: 100%;
+    height: 100%;
     padding: 30px;
-    font-size: 2rem;
-    line-height: 30px;
-    position: relative;
-}
-.rankingOne h1{
-    margin-top: 25px;
-    margin-bottom: 15px;
 }
 
 .backRankingScreen{
-    font-size: 35px;
     position: absolute;
-    top: 20px;
-    right: 10px;
+    font-size: 4vh;
+    top: 2vh;
+    right: 1vw;
 }
 
-.mode{
+#containerAllScore{
+    display: flex;
+    line-height: 4vh;
+}
+
+#containerShowScoreRankingOne,
+#containerShowScoreRankingThree{
+    width: 50%;
+}
+
+.home{
+    height: 100%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: clamp(2rem, 2.5rem + 1vw, 5rem) ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
+#rankIcon{
+    border-radius: 0;
+    position: absolute;
+    font-size: min(30px,4vh);
+    top: 3vh;
+    right: 3vh;
+}
 .miniCircle{
     background-color: red;
     border: 5px solid rgb(136, 23, 23);
-    width: 4rem;
-    height: 4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 100%;
 }
 
-.GreenMiniCircle{
-    background-color: rgb(0, 255, 21);
-    border: 4px solid rgb(23, 136, 29);
-    width: 3rem;
-    height: 3rem;
-    border-radius: 100%;
-}
-
-.RedMiniCircle{
-    background-color: red;
-    border: 5px solid rgb(136, 23, 23);
-    width: 3rem;
-    height: 3rem;
-    border-radius: 100%;
-}
-
-.modeCircles{
+#circleContainer{
     display: flex;
+    width: 100%;
     justify-content: center;
-    gap: 5px;
-    margin-bottom: 10px;
+    align-items: center;
+}
+
+.containerminiCircle{
+    display: flex;
 }
 
 .oneCircle,
 .threeCircle{
-    color: var(--fc-primary);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 30%;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.4);
-
-    border-radius: 3rem;
-    width: 15rem;
-    height: 15rem;
+    border-radius: 6px;
+    padding: 10px;
+    line-height: 5vh;
 
     transition: 150ms;
 }
 
+.oneCircle p,
+.threeCircle p{
+    color: var(--fc-primary);
+}
 .oneCircle:hover,
 .threeCircle:hover{
     background-color: rgba(0, 0, 0, 0.6);
-    width: 14rem;
-    height: 14rem;
     cursor: pointer;
     box-shadow: 0px 0px 20px 2px var(--bg-primary)
 }
-
 
 .threeCircle{
     margin-left: 5px;
 }
 
 .circle {
-    height: 20rem;
-    width: 20rem;
+    height: 10rem;
+    width: 10rem;
     border-radius: 100%;
     cursor: pointer;
     border: 10px solid rgb(191, 56, 56);
@@ -248,8 +233,9 @@ main h2{
 }
 
 .gameWithThreeCircles .circle{
-    height: 10rem;
-    width: 10rem;
+    height: 5rem;
+    width: 5rem;
+    border: 5px solid rgb(104, 4, 4);
 }
 
 button {
@@ -270,42 +256,45 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    line-height: 3rem
 }
 
 #threeSecondsToStartOver{
-    font-size: 10rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 5px solid var(--fc-secondary-dark);
     border-radius: 100%;
-    width: 15rem;
-    height: 15rem;
+    width: 5rem;
+    height: 5rem;
 }
 
-.averageScreen h2{
-    margin-top: 3rem;
+.averageScreen{
+    line-height: 7vh;
 }
 
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 2vh;
 }
 
 #icons{
-    width: clamp(30rem, 80%, 80rem);;
-    text-align: center;
+    width: min(800px, 90vw);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ion-icon{
-    font-size: clamp(40px, 50px + 1vw, 700px);
     color: var(--icon-color);
     transition: 100ms;
     border-radius: 20px;
     cursor: pointer;
+    font-size: 10vh;
 }
 
 ion-icon:hover{
@@ -333,7 +322,7 @@ ion-icon:hover{
 }
 
 .bgColor{
-    width: 25rem;
+    padding: 3px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -344,8 +333,8 @@ ion-icon:hover{
 }
 
 .color{
-    width: 5rem;
-    height: 5rem;
+    width: 3rem;
+    height:  3rem;
     border-radius: 100%;
 }
 #blue{
@@ -405,74 +394,28 @@ ion-icon:hover{
     }
 
 }
-
-@media (min-width: 700px) and (min-height: 700px){
-    header {
-        height: 15rem;
+@media (min-width: 700px){
+    .score{
+        line-height: 10vh;
     }
-    main{
-        height: 35rem;
-    }
-    #rankIcon{
-        font-size: 35px;
-    }
-
     .circle {
-        height: 30rem;
-        width: 30rem;
-    }
-
-    .oneCircle,
-    .threeCircle{
-    width: 20rem;
-    height: 20rem;
-    }
-
-    .oneCircle:hover,
-    .threeCircle:hover{
-    width: 18.5rem;
-    height: 18.5rem;
-    }
-
-    .gameWithThreeCircles{
-        flex-direction: row;
-        gap: 3rem;
-    }
-    
-    .gameWithThreeCircles .circle{
         height: 15rem;
         width: 15rem;
     }
 
-}
-
-@media (min-width: 1000px) and (min-height: 700px){
-    .introduction{
-        height: clamp(50rem, 60%, 70rem);
-        width: clamp(30rem, 80%, 90rem);
-        line-height: 1.3em;
-    }
-
-    .introduction h2{
-        font-size: 2rem;
-        line-height: 1.3em;
-    }
-    .introduction p{
-        font-size: 1.3em;
-        line-height: 1.3em;
-    }
-
-
-    .gameWithThreeCircles{
-        gap: 5rem;
-    }
-    
     .gameWithThreeCircles .circle{
-        height: 20rem;
-        width: 20rem;
+        height: 10rem;
+        width: 10rem;
     }
 }
-  
+
+@media (min-height: 700px){
+    .score{
+        line-height: 10vh;
+    }
+
+}
+
 .hide{
     display: none;
 }
