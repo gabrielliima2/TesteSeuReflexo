@@ -11,9 +11,6 @@
 
 </head>
 <body>
-    <header>
-        <h1>Teste seu reflexo</h1>
-    </header>
     <div class="bgIntroduction">
         <div class="introduction">
             <h2>Teste seus reflexos</h2>
@@ -40,17 +37,20 @@
         </div>
     </div>
 
+        <header>
+            <h1>Teste seu reflexo</h1>
+        </header>
         <main>
             <div class="rankingOne hide">
                 <ion-icon class="backRankingScreen" name="close-circle-outline"></ion-icon>
-                <h1>Seus melhores tempos</h1>
+                <h2>Seus melhores tempos</h2>
                 <div id="containerAllScore">
                     <div id="containerShowScoreRankingOne">
-                        <h2>Um circulo</h2>
+                        <h3>Um circulo</h3>
                         <p class=" showScoreRankingOne"></p>
                     </div>
                     <div id="containerShowScoreRankingThree">
-                        <h2>Três circulos</h2>
+                        <h3>Três circulos</h3>
                         <p class=" showScoreRankingThree"></p>
                     </div>
                 </div>
@@ -58,25 +58,26 @@
             </div>
 
             <div class="home ">
-                <div id="iconCntainer">
-                    <ion-icon id="rankIcon" name="stats-chart-outline"></ion-icon>
+                <div id="iconContainer">
                 </div>
-                <h1>Quantidade de Círculos</h1>
                 <div class="mode">
-                    <div class="oneCircle">
-                        <div class="modeCircles">
-                            <div class="miniCircle"></div>
+                    <ion-icon id="rankIcon" name="stats-chart-outline"></ion-icon>
+                    <h2>Quantidade de Círculos</h2>
+                    <div id="circleContainer">
+                        <div class="oneCircle">
+                            <div class='containerminiCircle'>
+                                <div class="miniCircle"></div>
+                            </div>
+                            <p>Um</p>
                         </div>
-                        <p>Um</p>
-                    </div>
-
-                    <div class="threeCircle">
-                        <div class="modeCircles">
-                            <div class="miniCircle"></div>
-                            <div class="miniCircle"></div>
-                            <div class="miniCircle"></div>
+                        <div class="threeCircle">
+                            <div class='containerminiCircle'>
+                                <div class="miniCircle"></div>
+                                <div class="miniCircle"></div>
+                                <div class="miniCircle"></div>
+                            </div>
+                            <p>Três</p>
                         </div>
-                        <p>Três</p>
                     </div>
                 </div>
             </div>
@@ -97,26 +98,25 @@
             
             <div class="clickedInButtonRed hide">
                 <button class="RestartWhenClickedInButtonRed"></button>
-                <h1>Clique no círculo verde</h1>
-                <h2>Para retomar, clique na tela</h2>
+                <h2>Clique no círculo verde.</h2>
+                <h3>Para retomar, clique na tela</h3>
             </div>
-
             <div class="buttonIsRed hide">
                 <button class="RestartRedOpition"></button>
-                <h1>Você clicou no momento errado, aguarde o círculo ficar verde</h1>
-                <h2>Para retomar, clique na tela </h2>
+                <h2>Você clicou no momento errado!<br> aguarde o círculo ficar verde.</h2>
+                <h3>Para retomar, clique na tela </h3>
             </div>
 
             <div class="score hide">
                 <p>Pontuação</p>
-                <p id="cronometro">0</p>
-                <p id="threeSecondsToStartOver">3</p>
+                <h1 id="cronometro">0</h1>
+                <h1 id="threeSecondsToStartOver">3</h1>
             </div>
 
             <div class="averageScreen hide">
-                <p>Média</p>
-                <p id="average"></p>
-                <h2>Clique na tela<br> para volta ao início</h2>
+                <h2>Média</h2>
+                <h1 id="average"></h1>
+                <h3>Clique na tela<br> para volta ao início</h3>
                 <button class="newGame"></button>
             </div>
 
