@@ -223,7 +223,8 @@ main h3{
     width: 10rem;
     border-radius: 100%;
     cursor: pointer;
-    border: 10px solid rgb(191, 56, 56);
+    
+    border: 5px solid rgb(191, 56, 56);
     background-color: red;
 }
 
