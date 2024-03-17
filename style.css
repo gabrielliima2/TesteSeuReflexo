@@ -414,7 +414,7 @@ ion-icon:hover{
     }
 }
 
-@media (min-height: 700px){
+@media (min-height: 400px){
     main {
         height: 70vh;
         width: min(800px, 90vw);
