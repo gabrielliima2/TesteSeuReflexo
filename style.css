@@ -104,7 +104,7 @@ main {
     justify-self: center;
     height: 50vh;
     width: min(800px, 90vw);
-    margin: 0 auto 12vh;
+    margin: 5vh auto 12vh;
 
     border-radius: 6px;
     background: var(--bg-main);
