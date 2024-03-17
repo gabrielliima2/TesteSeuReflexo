@@ -86,6 +86,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+   
 }
 
 header h1 {
@@ -98,10 +99,10 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-
-    height: 45vh;
+    justify-self: center;
+    height: 50vh;
     width: min(800px, 90vw);
-    margin: 0 auto 2rem;
+    margin: 10vh auto 10vh;
 
     border-radius: 6px;
     background: var(--bg-main);
@@ -414,12 +415,7 @@ ion-icon:hover{
     }
 }
 
-@media (min-height: 400px){
-    main {
-        height: 70vh;
-        width: min(800px, 90vw);
-
-    }
+@media (min-height: 700px){
     .score{
         line-height: 10vh;
     }
@@ -434,12 +430,8 @@ ion-icon:hover{
     .score{
         line-height: 6vh;
     }
-
 }
 @media (min-width: 700px) and (min-height: 500px){
-    header {
-        height: min(150px, 15vh);
-    }
     .circle {
         height: 15rem;
         width: 15rem;
