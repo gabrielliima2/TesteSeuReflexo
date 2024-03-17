@@ -1,10 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --hue: 200;
+    --bg-primary: hsl(var(--hue), 35%, 30%);
+    --bg-main: hsl(var(--hue), 50%, 80%);
+    --fc-primary: hsl(var(--hue), 0%, 100%);
+    --fc-secondary-dark: hsl(var(--hue), 100%, 11%);
+    --icon-color: hsl(var(--hue), 95%, 8%);
+
+    --button-color: rgba(255, 255, 255, 0);
+
+    --ft-size: 2vh;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: black;
+    overflow: hidden;
+    font-size: var(--ft-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body p{
+    color: rgba(0, 0, 0, 0.9);
+}
+.bgIntroduction{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+.introduction{
+    background: rgb(220, 220, 220);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+
+    height: 65vh;
+    width: min(80rem, 90vw);
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin: auto;
+    animation: downtop 1000ms 200ms backwards;
+}
+
+.GreenMiniCircle{
+    color: rgb(0, 255, 0);
+    background-color: rgb(23, 136, 29);
+    font-size: 2.5vh;
+    border-radius: 100%;
+}
+.GreenMiniCircle:hover{
+    color: rgb(0, 255, 0);
+    background-color: rgb(23, 136, 29);
+    cursor: default;
+}
+
+header {
+    height: min(150px, 15vh);
+    width: min(500px, 90vw);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 5vh ;
+    color: var(--fc-primary);
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 
-    height: 50vh;
+    height: 60vh;
     width: min(800px, 90vw);
     margin: 0 auto 2rem;
 
@@ -17,4 +109,330 @@ main {
 
     box-shadow: 0px 0px 50px 10px var(--fc-secondary-dark);
     /*transition: 100ms;*/
+}
+
+main h3{
+    color: var(--fc-secondary-dark);
+}
+
+.rankingOne{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.backRankingScreen{
+    position: absolute;
+    font-size: 4vh;
+    top: 2vh;
+    right: 1vw;
+}
+
+#containerAllScore{
+    display: flex;
+    line-height: 4vh;
+}
+
+#containerShowScoreRankingOne,
+#containerShowScoreRankingThree{
+    width: 50%;
+}
+
+.home{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#rankIcon{
+    border-radius: 0;
+    position: absolute;
+    font-size: min(30px,4vh);
+    top: 3vh;
+    right: 3vh;
+}
+.miniCircle{
+    background-color: rgb(152, 15, 15);
+    color: rgb(255, 0, 0);
+    font-size: 2.5vh;
+    border-radius: 100%;
+}
+.miniCircle:hover{
+    background-color: rgb(152, 15, 15);
+    color: rgb(255, 0, 0);
+    cursor: default;
+}
+
+#circleContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerminiCircle{
+    display: flex;
+}
+
+.oneCircle,
+.threeCircle{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 30%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 10px;
+    line-height: 5vh;
+
+    transition: 150ms;
+}
+
+.oneCircle p,
+.threeCircle p{
+    color: var(--fc-primary);
+}
+.oneCircle:hover,
+.threeCircle:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 2px var(--bg-primary)
+}
+
+.threeCircle{
+    margin-left: 5px;
+}
+
+.circle {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 10px solid rgb(191, 56, 56);
+    background-color: red;
+}
+
+.gameWithThreeCircles{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gameWithThreeCircles .circle{
+    height: 5rem;
+    width: 5rem;
+    border: 5px solid rgb(104, 4, 4);
+}
+
+button {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    background: var(--button-color);
+    color: var(--button-color);
+    cursor: pointer;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 3rem
+}
+
+#threeSecondsToStartOver{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid var(--fc-secondary-dark);
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+}
+
+.averageScreen{
+    line-height: 7vh;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 2vh;
+}
+
+#icons{
+    width: min(800px, 90vw);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-icon{
+    color: var(--icon-color);
+    transition: 100ms;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 10vh;
+}
+
+ion-icon:hover{
+    color: var(--fc-secondary-dark);  
+}
+
+.back{
+    position: absolute;
+    left: 0;
+}
+
+.colorPalette{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.palette{
+    border-radius: 100%;
+}
+
+.circleColors{
+    background-color: var(--bg-main);
+}
+
+.bgColor{
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--bg-main);
+    border-radius: 20px;
+    animation-name: righttoleft;
+    animation-duration: 200ms;
+}
+
+.color{
+    width: 3rem;
+    height:  3rem;
+    border-radius: 100%;
+}
+#blue{
+    background: rgb(0, 183, 255);
+    border: 5px solid rgb(0, 85, 119);
+    cursor: pointer;
+}
+#blue:hover{
+    box-shadow: 0px 0px 10px 1px rgba(0, 85, 119, 0.8);
+}
+#green{
+    background: rgb(0, 255, 0);
+    border: 5px solid rgb(2, 113, 2);
+    cursor: pointer;
+}
+#green:hover{
+    box-shadow: 0px 0px 10px 1px rgb(2, 113, 2, 0.8);
+}
+#red{
+    background: rgb(255, 76, 76);
+    border: 5px solid rgb(141, 46, 46);
+    cursor: pointer;
+}
+#red:hover{
+    box-shadow: 0px 0px 10px 1px rgb(141, 46, 46, 0.8);
+}
+#purple{
+    background: rgb(128, 0, 255);
+    border: 5px solid rgb(72, 1, 142);
+    cursor: pointer;
+}
+#purple:hover{
+    box-shadow: 0px 0px 10px 1px rgb(72, 1, 142, 0.8);
+}
+
+@keyframes righttoleft {
+    0%{
+        opacity: 0;
+        transform: translatex(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+@media (min-width: 700px){
+    .score{
+        line-height: 10vh;
+    }
+    .circle {
+        height: 10rem;
+        width: 10rem;
+    }
+
+    .gameWithThreeCircles .circle{
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
+@media (min-height: 700px){
+    .score{
+        line-height: 10vh;
+    }
+    
+}
+
+.hide{
+    display: none;
+}
+
+@media (min-width: 600px) and (min-height: 350px){
+    .score{
+        line-height: 6vh;
+    }
+    main {
+        height: 50vh;
+        width: min(800px, 90vw);
+    }
+}
+@media (min-width: 700px) and (min-height: 500px){
+    .circle {
+        height: 15rem;
+        width: 15rem;
+    }
+
 }
