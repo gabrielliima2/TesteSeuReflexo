@@ -336,6 +336,7 @@ ion-icon:hover{
     border-radius: 20px;
     animation-name: righttoleft;
     animation-duration: 200ms;
+    gap: 5px;
 }
 
 #blue{
