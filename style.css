@@ -23,6 +23,7 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: black;
     font-size: var(--ft-size);
+    overflow: hidden;
 }
 
 body p{
@@ -108,7 +109,7 @@ main {
     color: var(--fc-secondary-dark);
 
     text-align: center;
-    line-height: clamp(2rem, 4rem + 1vw, 6rem);
+    line-height: 6vh;
 
     box-shadow: 0px 0px 50px 10px var(--fc-secondary-dark);
     transition: 100ms;
@@ -274,7 +275,7 @@ button {
 }
 
 .averageScreen{
-    line-height: 7vh;
+    line-height: 5vh;
 }
 
 footer{
@@ -396,14 +397,6 @@ ion-icon:hover{
 
 
 @media (max-width: 700px){
-
-    #container{
-        display: grid;
-        grid-template-columns: 0.5fr 3fr 0.5fr;
-        grid-template-rows: 10vh 60vh 10vh;
-        grid-row-gap: 3vh;
-        grid-template-areas: "header header header" "none main none2" "none footer none2";
-    }
     #icons{
         justify-content: space-between;
     }
@@ -411,7 +404,7 @@ ion-icon:hover{
 @media (min-width: 700px){
 
     .score{
-        line-height: 15vh;
+        line-height: 10vh;
     }
     .circle {
         height: 10rem;
@@ -422,6 +415,16 @@ ion-icon:hover{
         height: 10rem;
         width: 10rem;
     }
+ 
+}
+@media (max-width: 1000px){
+        #container{
+            display: grid;
+            grid-template-columns: 0.5fr 3fr 0.5fr;
+            grid-template-rows: 10vh 60vh 10vh;
+            grid-row-gap: 3vh;
+            grid-template-areas: "header header header" "none main none2" "none footer none2";
+        }
  
 }
 
