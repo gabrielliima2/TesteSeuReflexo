@@ -16,6 +16,7 @@
     --button-color: rgba(255, 255, 255, 0);
 
     --ft-size: 2vh;
+    --ft-circle: 6vh;
 }
 
 body {
@@ -23,15 +24,12 @@ body {
     background: black;
     overflow: hidden;
     font-size: var(--ft-size);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 body p{
     color: rgba(0, 0, 0, 0.9);
 }
+
 .bgIntroduction{
     position: absolute;
     top: 0;
@@ -79,15 +77,19 @@ body p{
     cursor: default;
 }
 
+#container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 15vh 70vh 15vh;
+    grid-template-areas: "header header header" "none main none2" "none footer none2";
+}
+
 header {
-    height: min(150px, 10vh);
-    width: min(500px, 90vw);
+    grid-area: header;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-   
 }
 
 header h1 {
@@ -96,14 +98,11 @@ header h1 {
 }
 
 main {
+    grid-area: main;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    justify-self: center;
-    height: 50vh;
-    width: min(800px, 90vw);
-    margin: 5vh auto 12vh;
 
     border-radius: 6px;
     background: var(--bg-main);
@@ -113,7 +112,7 @@ main {
     line-height: clamp(2rem, 4rem + 1vw, 6rem);
 
     box-shadow: 0px 0px 50px 10px var(--fc-secondary-dark);
-    /*transition: 100ms;*/
+    transition: 100ms;
 }
 
 main h3{
@@ -280,19 +279,17 @@ button {
 }
 
 footer{
+    grid-area: footer;
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 2vh;
 }
 
 #icons{
-    width: min(800px, 90vw);
-    position: relative;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    position: relative;
 }
 
 ion-icon{
@@ -305,18 +302,6 @@ ion-icon{
 
 ion-icon:hover{
     color: var(--fc-secondary-dark);  
-}
-
-.back{
-    position: absolute;
-    left: 0;
-}
-
-.colorPalette{
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .palette{
@@ -337,10 +322,15 @@ ion-icon:hover{
     animation-name: righttoleft;
     animation-duration: 200ms;
     gap: 5px;
+    position: absolute;
+    right: 10vh;
+    top: 0;
+    bottom: 0;
+
 }
 
 #blue{
-    font-size: 5vh;
+    font-size: var(--ft-circle);
     color:  rgb(0, 183, 255);
     background:  rgb(0, 85, 119);
     cursor: pointer;
@@ -350,7 +340,7 @@ ion-icon:hover{
     box-shadow: 0px 0px 10px 1px rgba(0, 85, 119, 0.8);
 }
 #green{
-    font-size: 5vh;
+    font-size: var(--ft-circle);
     color: rgb(0, 255, 0);
     background: rgb(2, 113, 2);
     cursor: pointer;
@@ -360,7 +350,7 @@ ion-icon:hover{
     box-shadow: 0px 0px 10px 1px rgb(2, 113, 2, 0.8);
 }
 #red{
-    font-size: 5vh;
+    font-size: var(--ft-circle);
     color: rgb(255, 76, 76);
     background: rgb(141, 46, 46);
     cursor: pointer;
@@ -370,7 +360,7 @@ ion-icon:hover{
     box-shadow: 0px 0px 10px 1px rgb(141, 46, 46, 0.8);
 }
 #purple{
-    font-size: 5vh;
+    font-size:var(--ft-circle);
     color: rgb(128, 0, 255);
     background: rgb(72, 1, 142);
     cursor: pointer;
@@ -404,10 +394,25 @@ ion-icon:hover{
     }
 
 }
+
+
+@media (max-width: 700px){
+
+    #container{
+        display: grid;
+        grid-template-columns: 0.5fr 3fr 0.5fr;
+        grid-template-rows: 10vh 70vh 10vh;
+        grid-row-gap: 5vh;
+        grid-template-areas: "header header header" "none main none2" "none footer none2";
+    }
+    #icons{
+        justify-content: space-between;
+    }
+}
 @media (min-width: 700px){
 
     .score{
-        line-height: 10vh;
+        line-height: 15vh;
     }
     .circle {
         height: 10rem;
@@ -418,32 +423,10 @@ ion-icon:hover{
         height: 10rem;
         width: 10rem;
     }
+ 
 }
 
-@media (min-height: 700px){
-    .score{
-        line-height: 10vh;
-    }
-    
-}
 
 .hide{
     display: none;
-}
-
-@media (min-width: 600px) and (min-height: 350px){
-    .score{
-        line-height: 6vh;
-    }
-}
-@media (min-width: 700px) and (min-height: 500px){
-    main{
-        height: 70vh;
-        
-    }
-    .circle {
-        height: 15rem;
-        width: 15rem;
-    }
-
 }
