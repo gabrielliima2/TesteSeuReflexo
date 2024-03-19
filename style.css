@@ -425,7 +425,7 @@ ion-icon:hover{
     #container{
         display: grid;
         grid-template-columns: 0.5fr 3fr 0.5fr;
-        grid-template-rows: 8vh 55vh 5vh;
+        grid-template-rows: 10vh 55vh 5vh;
         grid-row-gap: 3vh;
         grid-template-areas: "header header header" "none main none2" "none footer none2";
     }
