@@ -396,12 +396,6 @@ ion-icon:hover{
 }
 
 @media (min-width: 700px){
-    #container{
-        display: grid;
-        grid-template-columns: 0.5fr 3fr 0.5fr;
-        grid-template-rows: 15svh 70svh 15svh;
-        grid-template-areas: "header header header" "none main none2" "none footer none2";
-    }
     .score{
         line-height: 10vh;
     }
