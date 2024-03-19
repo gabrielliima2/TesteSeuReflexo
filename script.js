@@ -101,15 +101,19 @@ palette.addEventListener('click',()=>{
 
 blue.addEventListener('click',()=>{
     document.documentElement.style.setProperty('--hue', '200')
+    bgColor.classList.add('hide')
 })
 green.addEventListener('click',()=>{
     document.documentElement.style.setProperty('--hue', '140')
+    bgColor.classList.add('hide')
 })
 red.addEventListener('click',()=>{
     document.documentElement.style.setProperty('--hue', '705')
+    bgColor.classList.add('hide')
 })
 purple.addEventListener('click',()=>{
     document.documentElement.style.setProperty('--hue', '250')
+    bgColor.classList.add('hide')
 })
 
 
