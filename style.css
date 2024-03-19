@@ -94,7 +94,7 @@ header {
 }
 
 header h1 {
-    font-size: 5vh ;
+    font-size: 6vh ;
     color: var(--fc-primary);
 }
 
@@ -224,14 +224,16 @@ main h3{
 }
 
 .circle {
-    height: 10rem;
-    width: 10rem;
+    height: 6rem;
+    width: 6rem;
     border-radius: 100%;
     cursor: pointer;
     
     border: 5px solid rgb(191, 56, 56);
     background-color: red;
 }
+
+
 
 .gameWithThreeCircles{
     display: flex;
@@ -262,7 +264,7 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    line-height: 3rem
+    line-height: 5vh
 }
 
 #threeSecondsToStartOver{
@@ -270,9 +272,10 @@ button {
     align-items: center;
     justify-content: center;
     border: 5px solid var(--fc-secondary-dark);
-    border-radius: 100%;
+    border-radius: 50%;
     width: 5rem;
     height: 5rem;
+    font-size: 6vh;
 }
 
 .averageScreen{
@@ -397,6 +400,7 @@ ion-icon:hover{
 }
 
 @media (max-width: 700px){
+    
     #container{
         display: grid;
         grid-template-columns: 0.5fr 3fr 0.5fr;
@@ -404,20 +408,46 @@ ion-icon:hover{
         grid-row-gap: 5svh ;
         grid-template-areas: "header header header" "none main none2" "none footer none2";
     }
+
+    
  
 }
 @media (min-width: 700px){
-    .score{
-        line-height: 10vh;
+    :root {
+        --ft-size: 3svh;
     }
-    .circle {
-        height: 10rem;
-        width: 10rem;
+    #circleAlone {
+        height: 8rem;
+        width: 8rem;
+    }
+
+    .score{
+        line-height: 8vh;
+    }
+
+    .averageScreen{
+        line-height: 8vh;
     }
 
     .gameWithThreeCircles .circle{
-        height: 10rem;
-        width: 10rem;
+        height: 8rem;
+        width: 8rem;
+    }
+    #threeSecondsToStartOver{
+        width: 6rem;
+        height: 6rem;
+    }
+ 
+}
+@media (min-width: 1000px) and (min-height: 500px) {
+    #circleAlone {
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .gameWithThreeCircles .circle{
+        height: 12rem;
+        width: 12rem;
     }
  
 }
