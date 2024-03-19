@@ -4,7 +4,8 @@
 Esse projeto é um teste de reflexo.<br>
 O intuito é testar a velocidade do seu click, terá um circulo vermelho na tela, quando ele ficar verde, você terá que clicar o mais rapido que conseguir.<br>
 Programa desenvolvido exclusivamente para praticar e aprimorar conhecimentos prévios em tecnologias web.<br>
-<a href="https://gabrielliima2.github.io/TesteSeuReflexo/" target="_blank">Teste seu reflexo</a>
+
+<a href="https://gabrielliima2.github.io/TesteSeuReflexo/" target="_blank"><h1 align="center"> Clique aqui para jogar</h1></a>
 </p>
 
 
