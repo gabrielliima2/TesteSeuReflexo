@@ -240,7 +240,6 @@ main h3{
 .gameWithThreeCircles .circle{
     height: 5rem;
     width: 5rem;
-    border: 5px solid rgb(104, 4, 4);
 }
 
 button {
